@@ -21,6 +21,7 @@
     - name: Install packages
       ansible.builtin.dnf:
         name:
+          - zsh
           - opentofu
           - git
           - htop
