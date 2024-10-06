@@ -154,12 +154,6 @@
           - io.podman_desktop.PodmanDesktop
         state: present
 
-    - name: Ensure Firefox extensions are installed
-      ansible.builtin.shell: |
-        firefox --headless --new-instance --profile $(mktemp -d) 'https://addons.mozilla.org/firefox/downloads/file/3758003/ublock_origin-latest.xpi' 'https://addons.mozilla.org/firefox/downloads/file/3794203/bitwarden-latest.xpi'
-      args:
-        warn: false
-
     - name: Ensure fonts directory
       ansible.builtin.file:
         path: "~{{ remote_regular_user }}/.fonts"
