@@ -5,8 +5,7 @@
   connection: local
   gather_facts: true
   vars:
-    flyctl_version: "0.1.130"
-    pulumi_version: "v3.94.2"
+    pulumi_version: "3.135.1"
 
   tasks:
     - name: Get my user
@@ -95,6 +94,11 @@
         gpgkey: https://packages.microsoft.com/keys/microsoft.asc
         gpgcheck: true
         enabled: true
+
+    - name: Install Starship with community role
+      hosts: localhost
+      roles:
+        - andrewrothstein.starship
 
     - name: Install VS Code
       ansible.builtin.dnf:

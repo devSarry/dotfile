@@ -1,1 +1,3 @@
 README.md
+run_once_rustup.sh
+run_onchange_reload_gnome-terminal-profiles.sh.tmpl
