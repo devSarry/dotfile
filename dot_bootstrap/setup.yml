@@ -95,6 +95,11 @@
         gpgcheck: true
         enabled: true
 
+    - name: Remove existing starship binary if present
+      ansible.builtin.file:
+        path: /usr/local/bin/starship
+        state: absent
+
     - name: Install Starship
       ansible.builtin.include_role:
         name: andrewrothstein.starship
