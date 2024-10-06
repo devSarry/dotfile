@@ -5,7 +5,7 @@
   connection: local
   gather_facts: true
   vars:
-    pulumi_version: "3.135.1"
+    pulumi_version: "v3.135.1"
 
   tasks:
     - name: Get my user
