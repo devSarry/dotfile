@@ -8,4 +8,5 @@ export PATH="$HOME/.scripts/bin:$PATH"
 alias task=go-task
 
 eval "$(starship init zsh)"
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
