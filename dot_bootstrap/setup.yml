@@ -137,11 +137,9 @@
         creates: /usr/local/bin/pulumi
       when: pulumi_installed is failed or pulumi_installed.stdout is not search(pulumi_version)
 
-    - name: Check if the targeted version of flyctl is installed
-      ansible.builtin.command: flyctl version
-      register: installed_flyctl_version
-      ignore_errors: true
-      changed_when: false
+    - name: Add Flathub remote repository
+      ansible.builtin.command: >
+        flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
     - name: Install Flatpak packages
       community.general.flatpak:
